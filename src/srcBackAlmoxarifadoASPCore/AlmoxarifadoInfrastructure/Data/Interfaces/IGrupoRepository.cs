@@ -10,5 +10,7 @@ namespace AlmoxarifadoInfrastructure.Data.Interfaces
     public interface IGrupoRepository
     {
         List<Grupo> ObterTodosGrupos();
+
+        Grupo ObterTodosGruposPorID(int id);
     }
 }

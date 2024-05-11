@@ -28,5 +28,17 @@ namespace AlmoxarifadoInfrastructure.Data.Repositories
                     })
                     .ToList();
         }
+
+        public Grupo ObterTodosGruposPorID(int id)
+        {
+            return _context.Grupo
+                    .Select(g => new Grupo
+                    {
+                        ID_GRU = g.ID_GRU,
+                        NOME_GRU = g.NOME_GRU,
+                        SUGESTAO_GRU = g.SUGESTAO_GRU ?? ""
+                    })
+                    .ToList().First(x => x?.ID_GRU == id);
+        }
     }
 }

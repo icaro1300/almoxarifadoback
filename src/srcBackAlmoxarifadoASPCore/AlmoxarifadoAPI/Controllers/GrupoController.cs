@@ -30,5 +30,25 @@ namespace AlmoxarifadoAPI.Controllers
             }
          
         }
+
+        [HttpGet("/Grupo/{id}")]
+        public IActionResult GetPorID(int id)
+        {
+            try
+            {
+                var grupo = _grupoService.ObterTodosGruposPorID(id);
+                if (grupo == null)
+                {
+                    return StatusCode(404, "Nenhum Usúario Encontrado com esse Código.");
+                }
+                return Ok(grupo);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados. Por favor, tente novamente mais tarde.");
+            }
+
+        }
     }
 }
