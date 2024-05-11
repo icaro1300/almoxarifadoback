@@ -12,5 +12,7 @@ namespace AlmoxarifadoInfrastructure.Data.Interfaces
         List<Grupo> ObterTodosGrupos();
 
         Grupo ObterTodosGruposPorID(int id);
+
+        Grupo CriarGrupo(Grupo grupo);
     }
 }
